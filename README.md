@@ -1,4 +1,4 @@
-# React Localization
+# React Native Localization
 
 A lightweight, no dependency React Native localization utility.
 
