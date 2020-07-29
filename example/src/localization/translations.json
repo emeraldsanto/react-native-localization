@@ -1,0 +1,14 @@
+{
+	"welcome": {
+		"fr": "Bienvenue!",
+		"en": "Welcome!" 
+	},
+	"currentLanguageIs": {
+		"fr": "La langue actuelle est:",
+		"en": "The current language is:"
+	},
+	"changeLanguage": {
+		"fr": "Changer la langue",
+		"en": "Change language"
+	}
+}

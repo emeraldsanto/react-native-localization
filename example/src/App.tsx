@@ -1,25 +1,61 @@
-import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import Localization from 'react-native-localization';
+import React, { FC } from "react";
+import { Button, StyleSheet, Text, View } from "react-native";
+import { LocalizationProvider, useLocalization } from "react-native-localization";
+import translations from "./localization/translations.json";
 
-export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+export const App: FC = () => {
+	return (
+		<LocalizationProvider initialLanguage="en" supportedLanguages={["fr", "en"]} translations={translations}>
+			<Child />
+		</LocalizationProvider>
+	);
+}
 
-  React.useEffect(() => {
-    Localization.multiply(3, 7).then(setResult);
-  }, []);
+const Child: FC = () => {
+	const { language, supportedLanguages, translate, changeLanguage } = useLocalization();
 
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+	function toggleLanguage() {
+		const nextLanguage = supportedLanguages.find(l => l !== language);
+
+		if (!nextLanguage) {
+			return;
+		}
+
+		changeLanguage(nextLanguage);
+	}
+
+	return (
+		<View style={styles.container}>
+			<Text style={styles.welcome}>
+				{translate("welcome")}
+			</Text>
+
+			<Text style={styles.current}>
+				{translate("currentLanguageIs")} {language.toUpperCase()}
+			</Text>
+
+			<Button
+				onPress={toggleLanguage}
+				title={translate("changeLanguage")}
+			/>
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		padding: 25,
+		alignItems: "center",
+		justifyContent: "center"
+	},
+	welcome: {
+		fontSize: 20,
+		paddingBottom: 15,
+		fontWeight: "bold"
+	},
+	current: {
+		fontSize: 18,
+		paddingBottom: 9,
+	}
 });
