@@ -7,7 +7,7 @@ A lightweight React Native localization utility
 This package has not yet been published to `npm`, you must install the dependency using this Github repository.
 
 ```sh
-npm install react-native-localization
+npm install emeraldsanto/react-native-localization
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ export const SomeScreen: FC = () => {
   
 	return (
 		<Text>
-  			{translate("some_key")}
+			{translate("some_key")}
 		</Text>
 	);
 }
@@ -74,7 +74,7 @@ import { LocalizedText } from "react-native-localization";
 export const SomeScreen: FC = () => {  
 	return (
 		<LocalizedText>
-  			{translate("some_key")}
+			{translate("some_key")}
 		</LocalizedText>
 	);
 }
