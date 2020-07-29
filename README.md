@@ -74,7 +74,7 @@ import { LocalizedText } from "react-native-localization";
 export const SomeScreen: FC = () => {  
 	return (
 		<LocalizedText>
-			{translate("some_key")}
+			some_key
 		</LocalizedText>
 	);
 }
