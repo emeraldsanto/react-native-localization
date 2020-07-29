@@ -53,7 +53,7 @@ You can then translate any key that is inside your translations object or file.
 
 ```typescript
 import { Text } from "react-native";
-import { useLocalization, LocalizedText } from "react-native-localization";
+import { useLocalization } from "react-native-localization";
 
 export const SomeScreen: FC = () => {
   const { translate } = useLocalization();
