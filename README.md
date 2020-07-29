@@ -56,13 +56,13 @@ import { Text } from "react-native";
 import { useLocalization, LocalizedText } from "react-native-localization";
 
 export const SomeScreen: FC = () => {
-const { translate } = useLocalization();
+  const { translate } = useLocalization();
   
-return (
-<Text>
-{translate("some_key")}
-</Text>
-);
+  return (
+    <Text>
+      {translate("some_key")}
+    </Text>
+  );
 }
 ```
 
@@ -72,11 +72,11 @@ Or using the `LocalizedText` component which wraps React Native's `Text` compone
 import { LocalizedText } from "react-native-localization";
 
 export const SomeScreen: FC = () => {  
-return (
-<LocalizedText>
-some_key
-</LocalizedText>
-);
+  return (
+    <LocalizedText>
+      some_key
+    </LocalizedText>
+  );
 }
 ```
 
